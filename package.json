@@ -6,7 +6,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node dist/server.js",
         "dev": "nodemon --exec ts-node server.ts",
-        "build": "npx tsc"
+        "build": "npx ts-node --transpile-only scripts/build.js"
     },
     "keywords": [],
     "author": "",
