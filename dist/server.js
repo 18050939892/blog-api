@@ -12,7 +12,7 @@ const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
     origin: '*', // 在生产环境中最好使用特定的域名，而不是 '*'
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Content-Type', 'Authorization', 'x-auth-token']
 }));
 app.use(express_1.default.json());
 mongoose_1.default.connect('mongodb+srv://18050939892:deerkesi3815@blog.ssrtblo.mongodb.net/blogBatabase?retryWrites=true&w=majority&appName=blog');
