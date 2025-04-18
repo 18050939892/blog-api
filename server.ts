@@ -12,7 +12,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/blog');
+mongoose.connect('mongodb+srv://18050939892:deerkesi3815@blog.ssrtblo.mongodb.net/?retryWrites=true&w=majority&appName=blog');
 
 app.use('/api/posts', postRoutes);
 app.use('/api/auth', authRoutes);
