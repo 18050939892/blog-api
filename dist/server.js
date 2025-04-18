@@ -9,7 +9,11 @@ const cors_1 = __importDefault(require("cors"));
 const posts_1 = __importDefault(require("./routes/posts"));
 const auth_1 = __importDefault(require("./routes/auth"));
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: '*', // 在生产环境中最好使用特定的域名，而不是 '*'
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express_1.default.json());
 mongoose_1.default.connect('mongodb://localhost:27017/blog');
 app.use('/api/posts', posts_1.default);

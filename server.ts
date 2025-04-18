@@ -5,7 +5,11 @@ import postRoutes from './routes/posts';
 import authRoutes from './routes/auth';
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: '*', // 在生产环境中最好使用特定的域名，而不是 '*'
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 mongoose.connect('mongodb://localhost:27017/blog');
