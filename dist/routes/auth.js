@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // routes/auth.ts
 const express_1 = require("express");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-const bcryptjs_1 = __importDefault(require("bcryptjs"));
+// import bcrypt from 'bcryptjs'
 // 假设你有一个User模型，如果没有，你需要创建它
 const User_1 = __importDefault(require("../models/User"));
 const auth_1 = __importDefault(require("../middleware/auth"));
@@ -44,8 +44,7 @@ router.post('/login', (req, res) => __awaiter(void 0, void 0, void 0, function* 
             res.status(400).json({ msg: '用户不存在' });
         }
         else {
-            const isMatch = yield bcryptjs_1.default.compare(password, user.password);
-            if (!isMatch) {
+            if (password == user.password) {
                 res.status(400).json({ msg: '密码错误' + "原：" + user.password + ";现: " + password });
             }
             else {
