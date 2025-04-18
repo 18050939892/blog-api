@@ -23,19 +23,19 @@ router.post('/register', async (req, res) => {
 })
 
 // 用户登录
+// @ts-ignore
 router.post('/login', async (req, res) => {
     try {
         // 这里应该有用户登录逻辑
-        // const {email, password} = req.body
-        // const user = await User.findOne({email})
-        // if (!user) return res.status(400).json({msg: '用户不存在'})
-        // const isMatch = await bcrypt.compare(password, user.password)
-        // if (!isMatch) return res.status(400).json({msg: '密码错误'})
-        
+        const {email, password} = req.body
+        const user = await User.findOne({email})
+        if (!user) return res.status(400).json({msg: '用户不存在'})
+        const isMatch = await bcrypt.compare(password, user.password)
+        if (!isMatch) return res.status(400).json({msg: '密码错误'})
         // 创建token
         const payload = {
             user: {
-                id: '12345' // 这里应该是实际用户ID
+                id: user._id // 这里应该是实际用户ID
             }
         }
         

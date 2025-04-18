@@ -8,5 +8,6 @@ const UserSchema = new mongoose_1.default.Schema({
     username: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
+    _id: { type: String },
 });
 exports.default = mongoose_1.default.model('User', UserSchema);
