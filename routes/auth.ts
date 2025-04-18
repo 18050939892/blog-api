@@ -1,11 +1,10 @@
 // routes/auth.ts
 import { Router } from 'express'
 import jwt from 'jsonwebtoken'
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 // 假设你有一个User模型，如果没有，你需要创建它
 import User from '../models/User'
 import auth from '../middleware/auth'
-
 const router = Router()
 // 用户注册
 router.post('/register', async (req, res) => {
@@ -33,7 +32,7 @@ router.post('/login', async (req, res) => {
         }else{
             const isMatch = await bcrypt.compare(password, user.password)
             if (!isMatch) {
-                res.status(400).json({msg: '密码错误'})
+                res.status(400).json({msg: '密码错误'+"原："+user.password+";现: "+password})
             }else{
                 // 创建token
                 if(user._id){
