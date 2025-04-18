@@ -16,16 +16,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 // 假设你有一个User模型，如果没有，你需要创建它
-// import User from '../models/User';
+const User_1 = __importDefault(require("../models/User"));
 const auth_1 = __importDefault(require("../middleware/auth"));
 const router = (0, express_1.Router)();
 // 用户注册
 router.post('/register', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // 这里应该有用户注册逻辑
-        // const { username, email, password } = req.body;
-        // const user = new User({ username, email, password });
-        // await user.save();
+        const { username, email, password } = req.body;
+        const user = new User_1.default({ username, email, password });
+        yield user.save();
         // 简化版本，直接返回成功消息
         res.status(201).json({ msg: '用户注册成功' });
     }
@@ -37,12 +37,11 @@ router.post('/register', (req, res) => __awaiter(void 0, void 0, void 0, functio
 router.post('/login', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // 这里应该有用户登录逻辑
-        // const { email, password } = req.body;
-        // const user = await User.findOne({ email });
-        // if (!user) return res.status(400).json({ msg: '用户不存在' });
-        //
-        // const isMatch = await bcrypt.compare(password, user.password);
-        // if (!isMatch) return res.status(400).json({ msg: '密码错误' });
+        // const {email, password} = req.body
+        // const user = await User.findOne({email})
+        // if (!user) return res.status(400).json({msg: '用户不存在'})
+        // const isMatch = await bcrypt.compare(password, user.password)
+        // if (!isMatch) return res.status(400).json({msg: '密码错误'})
         // 创建token
         const payload = {
             user: {
