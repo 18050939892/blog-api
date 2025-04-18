@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c72747e-8cb1-4af4-b1a6-c250745c401b" name="更改" comment="Merge remote-tracking branch 'origin/master'" />
+    <list default="true" id="6c72747e-8cb1-4af4-b1a6-c250745c401b" name="更改" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;dist/server.js&#10;#&#9;server.ts" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,31 +78,7 @@
       <workItem from="1744913675300" duration="617000" />
       <workItem from="1744944104419" duration="18874000" />
       <workItem from="1744964444153" duration="43000" />
-      <workItem from="1744966116517" duration="2803000" />
-    </task>
-    <task id="LOCAL-00009" summary="Initial commit">
-      <option name="closed" value="true" />
-      <created>1744907856041</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1744907856041</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Initial commit">
-      <option name="closed" value="true" />
-      <created>1744907968030</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1744907968030</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Initial commit">
-      <option name="closed" value="true" />
-      <created>1744908186040</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1744908186040</updated>
+      <workItem from="1744966116517" duration="3211000" />
     </task>
     <task id="LOCAL-00012" summary="Initial commit">
       <option name="closed" value="true" />
@@ -472,7 +448,31 @@
       <option name="project" value="LOCAL" />
       <updated>1744968903613</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;dist/server.js&#10;#&#9;server.ts">
+      <option name="closed" value="true" />
+      <created>1744968965630</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1744968965630</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;dist/server.js&#10;#&#9;server.ts">
+      <option name="closed" value="true" />
+      <created>1744968970659</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1744968970659</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;dist/server.js&#10;#&#9;server.ts">
+      <option name="closed" value="true" />
+      <created>1744969103176</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1744969103176</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,6 +482,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;dist/server.js&#10;#&#9;server.ts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;dist/server.js&#10;#&#9;server.ts" />
   </component>
 </project>
