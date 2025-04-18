@@ -1,7 +1,7 @@
 // routes/auth.ts
 import { Router } from 'express'
 import jwt from 'jsonwebtoken'
-// import bcrypt from 'bcrypt'
+import bcrypt from 'bcrypt'
 // 假设你有一个User模型，如果没有，你需要创建它
 import User from '../models/User'
 import auth from '../middleware/auth'
@@ -23,31 +23,40 @@ router.post('/register', async (req, res) => {
 })
 
 // 用户登录
-// @ts-ignore
 router.post('/login', async (req, res) => {
     try {
         // 这里应该有用户登录逻辑
-        // const {email, password} = req.body
-        // const user = await User.findOne({email})
-        // if (!user) return res.status(400).json({msg: '用户不存在'})
-        // const isMatch = await bcrypt.compare(password, user.password)
-        // if (!isMatch) return res.status(400).json({msg: '密码错误'})
-        // 创建token
-        const payload = {
-            user: {
-                id: '123456' // 这里应该是实际用户ID
+        const {email, password} = req.body
+        const user = await User.findOne({email})
+        if (!user) {
+            res.status(400).json({msg: '用户不存在'})
+        }else{
+            const isMatch = await bcrypt.compare(password, user.password)
+            if (!isMatch) {
+                res.status(400).json({msg: '密码错误'})
+            }else{
+                // 创建token
+                if(user._id){
+                    const payload = {
+                        user: {
+                            id: user._id // 这里应该是实际用户ID
+                        }
+                    }
+                    
+                    jwt.sign(
+                        payload,
+                        'secretKey',
+                        {expiresIn: 3600},
+                        (err, token) => {
+                            if (err) throw err
+                            res.json({token})
+                        }
+                    )
+                }
+
             }
         }
         
-        jwt.sign(
-            payload,
-            'secretKey',
-            {expiresIn: 3600},
-            (err, token) => {
-                if (err) throw err
-                res.json({token})
-            }
-        )
     } catch (error) {
         res.status(500).json({error: (error as Error).message})
     }
