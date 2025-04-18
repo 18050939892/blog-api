@@ -9,7 +9,7 @@ app.use(cors({
     origin: '*', // 在生产环境中最好使用特定的域名，而不是 '*'
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     // allowedHeaders: ['Content-Type', 'Authorization','x-auth-token']
-    allowedHeaders: '*'
+    allowedHeaders: ['Content-Type', 'Authorization','x-auth-token']
 }));
 
 app.use(express.json());
