@@ -7,8 +7,9 @@ const router = Router();
 
 // 获取所有文章
 router.get('/', async (req, res) => {
-    const posts = await Post.find({ published: true }).sort({ createdAt: -1 });
-    res.json(1);
+    // const posts = await Post.find({ published: true }).sort({ createdAt: -1 });
+    const posts=await Post.find()
+    res.json(posts);
 });
 
 // 获取单篇文章
