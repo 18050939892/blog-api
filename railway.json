@@ -1,0 +1,12 @@
+{
+    "build": {
+        "builder": "NIXPACKS",
+        "buildCommand": "npm install --include=dev && npx tsc"
+    },
+    "deploy": {
+        "startCommand": "npm start",
+        "healthcheckPath": "/",
+        "healthcheckTimeout": 100,
+        "restartPolicyType": "ON_FAILURE"
+    }
+}
