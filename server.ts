@@ -10,6 +10,7 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization','x-auth-token','Access-Control-Allow-Origin']
 }));
+app.options('*', cors());
 app.use(express.json());
 
 mongoose.connect('mongodb+srv://18050939892:deerkesi3815@blog.ssrtblo.mongodb.net/blogBatabase?retryWrites=true&w=majority&appName=blog');

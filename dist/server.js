@@ -14,6 +14,7 @@ app.use((0, cors_1.default)({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'x-auth-token', 'Access-Control-Allow-Origin']
 }));
+app.options('*', (0, cors_1.default)());
 app.use(express_1.default.json());
 mongoose_1.default.connect('mongodb+srv://18050939892:deerkesi3815@blog.ssrtblo.mongodb.net/blogBatabase?retryWrites=true&w=majority&appName=blog');
 app.use('/api/posts', posts_1.default);
