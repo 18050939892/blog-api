@@ -8,9 +8,9 @@ const app = express();
 app.use(cors({
     origin: '*', // 在生产环境中最好使用特定的域名，而不是 '*'
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization','x-auth-token','Access-Control-Allow-Origin']
+    allowedHeaders: ['Content-Type', 'Authorization','x-auth-token']
 }));
-app.options('*', cors());
+
 app.use(express.json());
 
 mongoose.connect('mongodb+srv://18050939892:deerkesi3815@blog.ssrtblo.mongodb.net/blogBatabase?retryWrites=true&w=majority&appName=blog');
