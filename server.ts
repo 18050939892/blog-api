@@ -12,7 +12,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/blog');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/blog');
 
 app.use('/api/posts', postRoutes);
 app.use('/api/auth', authRoutes);
