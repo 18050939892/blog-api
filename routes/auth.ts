@@ -1,11 +1,10 @@
 // routes/auth.ts
 import { Router } from 'express'
 import jwt from 'jsonwebtoken'
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 // 假设你有一个User模型，如果没有，你需要创建它
 import User from '../models/User'
 import auth from '../middleware/auth'
-
 const router = Router()
 // 用户注册
 router.post('/register', async (req, res) => {
