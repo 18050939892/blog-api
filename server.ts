@@ -12,5 +12,4 @@ mongoose.connect('mongodb://localhost:27017/blog');
 
 app.use('/api/posts', postRoutes);
 app.use('/api/auth', authRoutes);
-1
 app.listen(4000, () => console.log('Server running on port 4000'));
