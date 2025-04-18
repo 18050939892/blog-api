@@ -20,7 +20,7 @@ const router = (0, express_1.Router)();
 // 获取所有文章
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const posts = yield Post_1.default.find({ published: true }).sort({ createdAt: -1 });
-    res.json(posts);
+    res.json(1);
 }));
 // 获取单篇文章
 router.get('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
