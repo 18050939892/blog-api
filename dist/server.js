@@ -15,7 +15,7 @@ app.use((0, cors_1.default)({
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express_1.default.json());
-mongoose_1.default.connect('mongodb://localhost:27017/blog');
+mongoose_1.default.connect('mongodb+srv://18050939892:deerkesi3815@blog.ssrtblo.mongodb.net/blogBatabase?retryWrites=true&w=majority&appName=blog');
 app.use('/api/posts', posts_1.default);
 app.use('/api/auth', auth_1.default);
 app.listen(4000, () => console.log('Server running on port 4000'));
