@@ -25,8 +25,8 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     try {
         // 这里应该有用户登录逻辑
-        const {username, password} = req.body
-        const user = await User.findOne({username})
+        const {email, password} = req.body
+        const user = await User.findOne({email})
         if (!user) {
             res.status(400).json({msg: '用户不存在'})
         }else{

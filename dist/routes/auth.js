@@ -37,8 +37,8 @@ router.post('/register', (req, res) => __awaiter(void 0, void 0, void 0, functio
 router.post('/login', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // 这里应该有用户登录逻辑
-        const { username, password } = req.body;
-        const user = yield User_1.default.findOne({ username });
+        const { email, password } = req.body;
+        const user = yield User_1.default.findOne({ email });
         if (!user) {
             res.status(400).json({ msg: '用户不存在' });
         }
