@@ -29,12 +29,8 @@ router.put('/comment', async (req, res) => {
     const {username, content, id} = req.body
     const post = await Post.findById(id)
     post?.comments.push({user:username,content})
-    if (post) {
-        res.json(post);
-    }else{
-        res.json({username, content, id})
-    }
-    
+    await post?.save();
+    res.status(200).json(post)
 });
 
 export default router;
