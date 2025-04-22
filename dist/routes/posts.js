@@ -34,4 +34,9 @@ router.post('/', auth_1.default, (req, res) => __awaiter(void 0, void 0, void 0,
     yield post.save();
     res.status(201).json(post);
 }));
+router.put('/comment', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { username, content, id } = req.body;
+    const post = yield Post_1.default.findById(id);
+    post === null || post === void 0 ? void 0 : post.comments.push({ user: username, content });
+}));
 exports.default = router;

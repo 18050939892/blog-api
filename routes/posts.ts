@@ -25,4 +25,10 @@ router.post('/', auth, async (req, res) => {
     res.status(201).json(post);
 });
 
+router.put('/comment', async (req, res) => {
+    const {username, content, id} = req.body
+    const post = await Post.findById(id)
+    post?.comments.push({user:username,content})
+});
+
 export default router;

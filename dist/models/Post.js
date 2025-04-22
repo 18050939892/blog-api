@@ -10,6 +10,10 @@ const PostSchema = new mongoose_1.default.Schema({
     content: { type: String, required: true },
     published: { type: Boolean, default: false },
     createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now }
+    updatedAt: { type: Date, default: Date.now },
+    comments: [{
+            user: { type: String },
+            content: { type: String }
+        }]
 });
 exports.default = mongoose_1.default.model('Post', PostSchema);
