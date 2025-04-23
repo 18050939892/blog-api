@@ -33,4 +33,29 @@ router.put('/comment', async (req, res) => {
     res.status(200).json(post)
 });
 
+router.put('/:id', async (req, res) => {
+    const post = await Post.findById(req.params.id);
+    const {title, content} = req.body
+    if(title!=null && content!=null){
+        if(post!=null){
+            post.title=title;
+            post.content=content;
+            await post.save();
+            res.status(200).json(post);
+        }else{
+            res.status(400).json({message:"Not Found Article"});
+        }
+
+    }else{
+        res.status(400).json({message:"Not Found Parameter"});
+    }
+
+});
+router.delete('/:id', async (req, res) => {
+    const result = await Post.deleteOne({ _id: req.params.id });
+    result?res.status(200).json({ message: "文章已成功删除", result: result }) : res.status(404).json({ message: "文章未找到" });
+    
+    
+});
+
 export default router;

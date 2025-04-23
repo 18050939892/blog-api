@@ -41,4 +41,26 @@ router.put('/comment', (req, res) => __awaiter(void 0, void 0, void 0, function*
     yield (post === null || post === void 0 ? void 0 : post.save());
     res.status(200).json(post);
 }));
+router.put('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const post = yield Post_1.default.findById(req.params.id);
+    const { title, content } = req.body;
+    if (title != null && content != null) {
+        if (post != null) {
+            post.title = title;
+            post.content = content;
+            yield post.save();
+            res.status(200).json(post);
+        }
+        else {
+            res.status(400).json({ message: "Not Found Article" });
+        }
+    }
+    else {
+        res.status(400).json({ message: "Not Found Parameter" });
+    }
+}));
+router.delete('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield Post_1.default.deleteOne({ _id: req.params.id });
+    result ? res.status(200).json({ message: "文章已成功删除", result: result }) : res.status(404).json({ message: "文章未找到" });
+}));
 exports.default = router;
